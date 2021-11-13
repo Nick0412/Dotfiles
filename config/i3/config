@@ -1,0 +1,65 @@
+set $alt Mod1
+set $win Mod4
+
+floating_modifier $alt
+
+bindsym $alt+Shift+q kill
+bindsym $alt+Return exec --no-startup-id kitty
+bindsym $alt+d exec dmenu_run
+
+# Change the focus
+bindsym $alt+h focus left
+bindsym $alt+j focus down
+bindsym $alt+k focus up
+bindsym $alt+l focus right
+bindsym $alt+Left focus left
+bindsym $alt+Down focus down
+bindsym $alt+Up focus up
+bindsym $alt+Right focus right
+
+# Move focused window
+bindsym $alt+Shift+h move left
+bindsym $alt+Shift+j move down
+bindsym $alt+Shift+k move up
+bindsym $alt+Shift+l move right
+bindsym $alt+Shift+Left move left
+bindsym $alt+Shift+Down move down
+bindsym $alt+Shift+Up move up
+bindsym $alt+Shift+Right move right
+
+# Split
+bindsym $win+v split vertical
+bindsym $win+h split horizontal
+bindsym $win+t split toggle
+bindsym $win+f fullscreen toggle
+
+bindsym $alt+Shift+space floating toggle
+bindsym $alt+space focus mode_toggle
+
+bindsym $alt+Shift+r restart
+bindsym $alt+Shift+w reload
+bindsym $alt+Shift+e exit
+
+bindsym $alt+1 workspace 1
+bindsym $alt+2 workspace 2
+bindsym $alt+3 workspace 3
+bindsym $alt+4 workspace 4
+bindsym $alt+5 workspace 5
+bindsym $alt+6 workspace 6
+bindsym $alt+7 workspace 7
+
+bar {
+    i3bar_command i3bar
+    position top
+    mode dock
+    status_command i3status
+}
+
+for_window [class="^.*"] border pixel 1
+
+bindsym XF86AudioRaiseVolume exec amixer -q set Master 5%+ unmute
+bindsym XF86AudioLowerVolume exec amixer -q set Master 5%- unmute
+bindsym XF86AudioMute exec amixer -q set Master toggle
+
+bindsym $alt+Tab workspace next
+bindsym $alt+Shift+tab workspace prev
