@@ -2,36 +2,37 @@ set $alt Mod1
 set $win Mod4
 
 floating_modifier $alt
+focus_follows_mouse no
 
 bindsym $alt+Shift+q kill
-bindsym $alt+Return exec --no-startup-id kitty tmux -2
+bindsym $alt+Return exec --no-startup-id kitty
 bindsym $alt+d exec dmenu_run
 
 # Change the focus
-bindsym $alt+h focus left
-bindsym $alt+j focus down
-bindsym $alt+k focus up
-bindsym $alt+l focus right
+# bindsym $alt+h focus left
+# bindsym $alt+j focus down
+# bindsym $alt+k focus up
+# bindsym $alt+l focus right
 bindsym $alt+Left focus left
 bindsym $alt+Down focus down
 bindsym $alt+Up focus up
 bindsym $alt+Right focus right
 
 # Move focused window
-bindsym $alt+Shift+h move left
-bindsym $alt+Shift+j move down
-bindsym $alt+Shift+k move up
-bindsym $alt+Shift+l move right
+# bindsym $alt+Shift+h move left
+# bindsym $alt+Shift+j move down
+# bindsym $alt+Shift+k move up
+# bindsym $alt+Shift+l move right
 bindsym $alt+Shift+Left move left
 bindsym $alt+Shift+Down move down
 bindsym $alt+Shift+Up move up
 bindsym $alt+Shift+Right move right
 
 # Split
-bindsym $win+v split vertical
-bindsym $win+h split horizontal
-bindsym $win+t split toggle
-bindsym $win+f fullscreen toggle
+bindsym $alt+v split vertical
+bindsym $alt+h split horizontal
+bindsym $alt+t split toggle
+bindsym $alt+f fullscreen toggle
 
 bindsym $alt+Shift+space floating toggle
 bindsym $alt+space focus mode_toggle
@@ -48,7 +49,7 @@ bindsym $alt+5 workspace 5
 bindsym $alt+6 workspace 6
 bindsym $alt+7 workspace 7
 
-for_window [class="^.*"] border pixel 1
+for_window [class="^.*"] border pixel 0
 
 bindsym XF86AudioRaiseVolume exec amixer -q set Master 5%+ unmute
 bindsym XF86AudioLowerVolume exec amixer -q set Master 5%- unmute
@@ -57,3 +58,8 @@ bindsym XF86AudioMute exec amixer -q set Master toggle
 bindsym $alt+Tab workspace next
 
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+exec_always --no-startup-id feh --bg-scale $HOME/Downloads/background_pic.jpeg
+
+gaps inner 30
+gaps outer -20
+gaps top 32
