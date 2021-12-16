@@ -56,4 +56,6 @@ if exists('+termguicolors')
   set termguicolors
 endif
 
-source $HOME/.config/nvim/coc_lsp.vim
+" source $HOME/.config/nvim/coc_lsp.vim
+
+" highlight CocHintFloat ctermfg=Red  guifg=#ff0000
